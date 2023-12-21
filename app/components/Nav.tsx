@@ -6,7 +6,6 @@ import { usePathname } from 'next/navigation'
 
 const Nav = () => {
   const path = usePathname()
-  console.log(path)
 
   const links = [
     {
@@ -27,11 +26,10 @@ const Nav = () => {
       </NavbarBrand>
       {links.map((link, index) => (
         <Link href={link.path} key={index}>
-          {/* <NavbarItem>{link.name}</NavbarItem> */}
           {link.path === path ? (
-            <NavbarItem className='text-zinc-800'>{link.name}</NavbarItem>
-          ) : (
             <NavbarItem className='text-zinc-500'>{link.name}</NavbarItem>
+          ) : (
+            <NavbarItem className='text-zinc-700'>{link.name}</NavbarItem>
           )}
         </Link>
       ))}
